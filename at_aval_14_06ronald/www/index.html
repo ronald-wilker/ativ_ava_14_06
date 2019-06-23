@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html  lang="pt-br">
+    <head>
+      <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+        <link href="bootstrap/fontawesome-free-5.8.2-web/css/all.css" rel="stylesheet">
+        <title>App cadastro de veículos</title>
+        <style type="text/css">
+      		#pesquisaDesc{
+      			max-width:500px;
+      		}
+
+      	</style>
+
+    </head>
+    <body class="fundo">
+  <div class="">
+
+
+        <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand m-2" href="#">
+          <img src="img/carro.png" alt="Logo" style="width:60px;"> apcar</a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#car">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse " id="car">
+        <ul class="navbar-nav ">
+
+          <!--da nave  modal -->
+        <li class="nav-item ml-5">
+          <!-- Botão para acionar modal -->
+        <a  class="nav-link text-white" data-toggle="modal" data-target="#cadFormulario">
+        Cadastro veículo
+      </a>
+        <!-- Modal -->
+        <div class="modal fade" id="cadFormulario" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="TituloModalCentralizado">Cadastro de Veículos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form  id="formcar" action="#"  method="post">
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="descri">Descrição</label>
+                   <input type="text" class="form-control" id="descri" name="descri" placeholder="Digite a descrição...">
+                </div>
+
+                <div class="form-group">
+                  <label for="marca">Marca</label>
+                   <input type="text" class="form-control" id="marca" name="marca" placeholder="Digitge a marca do veículo...">
+                </div>
+
+                <div class="form-group">
+                  <label for="modelo">Modelo</label>
+                   <input type="text" class="form-control" id="modelo" name="modelo" placeholder="Digite o modelo do veículo..">
+                </div>
+
+                <div class="form-group">
+                  <label for="tipov">Tipo de veículo</label>
+                   <input type="text" class="form-control" id="tipov" name="tipov" placeholder="Digite o tipo do veículo...">
+                </div>
+
+                <div class="form-group">
+                  <label for="quantp">Quantidade de passageiros</label>
+                   <input type="text" class="form-control" id="quantp" name="quantp" placeholder="Digite a quantidade de passageiros...">
+                </div>
+
+                <div class="form-group">
+                  <label for="vlvenda">Valor de venda</label>
+                   <input type="text" class="form-control" id="vlvenda" name="vlvenda" placeholder="Digite valor de venda...">
+                </div>
+
+                <div class="form-group">
+                  <label for="vlcompra">Valor da compa</label>
+                   <input type="text" class="form-control" id="vlcompra" name="vlcompra" placeholder="Digite valor da compra...">
+                </div>
+
+                <div class="form-group">
+                  <label for="dtcompra">Data da compa</label>
+                   <input type="text" class="form-control" id="dtcompra" name="dtcompra" placeholder="Digite Data da compra...">
+                </div>
+
+                <div class="form-group">
+                  <label for="estato">Status de venda</label>
+                   <input type="text" class="form-control" id="estato" name="estato" placeholder="Digite o status de venda...">
+                </div>
+
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <input type="submit" value="Salvar"  class="btn btn-primary">
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+        </li>
+        <!--barra de pesquisa-->
+        <li class="nav-item ml-5">
+          <form class="form nav-link " name="form_pesquisa" id="form_pesquisa" method="post" action="">
+            <div class="input-group input-group-sm">
+              <span class=" text-white mr-2">pesquisa:</span>
+                <input class="form-control " name="pesquisaDesc" id="pesquisaDesc" value="" tabindex="1" type="text" placeholder="Pesquisa descrição...">
+                <div class="input-group-addon" style="margin-left: -37px; z-index: 3; border-radius: 20px; background-color: transparent; border:none;">
+                  <button class="btn  btn-outline-primary btn-sm " type="submit" style="border-radius: 20px;height:29px;width:29px;margin-top:1.2px;padding-left:6px;" id="search-btn" value="Pesquisa" name="pqsa"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+          </form>
+        </li>
+        </ul>
+        </div>
+        </nav>
+ </div>
+ <div id="erros">
+
+    </div>
+ <div class='container-flex row'>
+ 		<fieldset id="cartext" >
+
+ 			<!-- Cabeçalho da Listagem -->
+ 			<legend><h1>Listagem de Carros</h1></legend>
+
+
+
+ 				<!-- Tabela de Clientes -->
+ 				<table class="d-block"  style="height:400px;overflow:scroll;">
+          <tbody class="carro  " >
+
+ 					<div class='row  d-flex justify-content-center align-items-center' style=" border:1px white solid;">
+
+          <tr>
+            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Descrição</th>
+            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Marca</th>
+            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Modelo</th>
+            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Tipo de veículo</th>
+            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Qnt de passageiros</th>
+            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Valor de venda</th>
+            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Valor da compra</th>
+            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Data compra</th>
+            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;"> venda</th>
+            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Edita</th>
+            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Excluir</th>
+          </tr>
+          <td class="descri">     </td>
+          <td class="marca">      </td>
+          <td class="modelo">     </td>
+          <td class="tipov">      </td>
+          <td class="quantp">     </td>
+          <td class="vlvenda">    </td>
+          <td class="vlcompra">   </td>
+          <td class="dtcompra">   </td>
+          <td class="estato">     </td>
+          <td class="id"></td >
+          <td class="ider"></td >
+
+          </div>
+
+
+
+        </tbody>
+ 				</table>
+
+ 		</fieldset>
+ 	</div>
+
+<!--aqui recebera os valores da pesquisa e mostrara a figura carregamento se demera a pesquisa-->
+  <div class="row container-flex" id="contentLoading">
+				<div id="loading"></div>
+			</div>
+			<section class="jumbotron">
+				<div id="MostraPesq"></div>
+        <div class="">
+
+            <!-- Botão para acionar modal
+          <a  class="nav-link " data-toggle="modal" data-target="#atualFormulario">
+          Cadastro veículo
+        </a>
+      -->
+          <!-- Modal -->
+          <div class="modal fade" id="atualFormulario" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="TituloModalCentralizado">Cadastro de Veículos</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <form  id="updatform" action=""  method="post">
+                <div class="modal-body ">
+                  <div class="form-group aqui">
+                    <label for="ideatual">ID</label>
+                     <input type="text" class="form-control" id="i1" name="ider" value="" placeholder="id">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="descri">Descrição</label>
+                     <input type="text" class="form-control" id="descri1" name="descricao"  placeholder="Digite a descrição...">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="marca">Marca</label>
+                     <input type="text" class="form-control" id="marca1" name="marcas" placeholder="Digitge a marca do veículo...">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="modelo">Modelo</label>
+                     <input type="text" class="form-control" id="modelo1" name="modelos" placeholder="Digite o modelo do veículo..">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="tipov">Tipo de veículo</label>
+                     <input type="text" class="form-control" id="tipov1" name="tipove" placeholder="Digite o tipo do veículo...">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="quantp">Quantidade de passageiros</label>
+                     <input type="text" class="form-control" id="quantp1" name="quantpe" placeholder="Digite a quantidade de passageiros...">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="vlvenda">Valor de venda</label>
+                     <input type="text" class="form-control" id="vlvenda1" name="vlvend" placeholder="Digite valor de venda...">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="vlcompra">Valor da compa</label>
+                     <input type="text" class="form-control" id="vlcompra1" name="vlcompr" placeholder="Digite valor da compra...">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="dtcompra">Data da compa</label>
+                     <input type="text" class="form-control" id="dtcompra1" name="dtcompr" placeholder="Digite Data da compra...">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="estato">Status de venda</label>
+                     <input type="text" class="form-control" id="estato1" name="estat" placeholder="Digite o status de venda...">
+                  </div>
+
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                  <input type="submit" value="Salvar"  class="btn btn-primary">
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <!--<div class="app">
+            <h1>Aplicativo Car</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>-->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="bootstrap/jquery.mobile.custom.js"></script>
+        <!--<script src="bootstrap/popper.js/dist/umd/popper.js"></script>-->
+        <script src="bootstrap/js/bootstrap.js" ></script>
+        <!--<script type="text/javascript" src="cordova.js"></script>-->
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/aplicacao.js"></script>
+
+    </body>
+</html>
