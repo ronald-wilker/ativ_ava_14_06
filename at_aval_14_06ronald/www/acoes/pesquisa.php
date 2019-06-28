@@ -12,19 +12,19 @@ class Pesq extends Conect
 	{
 	$msg = "";
 	//come�amos a concatenar nossa tabela
-	$msg .="<table class='table table-hover'>";
+	$msg .="<table class='table-sm table-hover table-striped table-dark'>";
 	$msg .="	<thead>";
 	$msg .="		<tr>";
-	$msg .="			<th>Descrição:</th>";
-	$msg .="			<th>Modelo:</th>";
-	$msg .="			<th>Marca:</th>";
-	$msg .="			<th>Tipo de veículo:</th>";
-	$msg .="			<th>Qntd de passageiros:</th>";
-	$msg .="			<th>Valor de venda:</th>";
-	$msg .="			<th>Valor da compra:</th>";
-	$msg .="			<th>Data compra:</th>";
-	$msg .="			<th>Venda:</th>";
-	$msg .="			<th>Edita</th>";
+	$msg .="			<th scope='col'>Descrição:</th>";
+	$msg .="			<th scope='col'>Modelo:</th>";
+	$msg .="			<th scope='col'>Marca:</th>";
+	$msg .="			<th scope='col'>Tipo de veículo:</th>";
+	$msg .="			<th scope='col'>Qntd de passageiros:</th>";
+	$msg .="			<th scope='col'>Valor de venda:</th>";
+	$msg .="			<th scope='col'>Valor da compra:</th>";
+	$msg .="			<th scope='col'>Data compra:</th>";
+	$msg .="			<th scope='col'>Venda:</th>";
+	$msg .="			<th scope='col'>Edita</th>";
 	$msg .="		</tr>";
 	$msg .="	</thead>";
 	$msg .="	<tbody>";
@@ -33,17 +33,17 @@ class Pesq extends Conect
 						//resgata os dados na tabela
 						if($resultado){
 							foreach ($resultado as $res) {
-	$msg .="				<tr>";
-	$msg .="					<td>".$res['descricao']."</td>";
-	$msg .="					<td>".$res['marca']."</td>";
-	$msg .="					<td>".$res['modelo']."</td>";
-	$msg .="					<td>".$res['tipov']."</td>";
-	$msg .="					<td>".$res['qntpass']."</td>";
-	$msg .="					<td>".$res['vlvenda']."</td>";
-	$msg .="					<td>".$res['vlcompra']."</td>";
-	$msg .="					<td>".$res['datcompra']."</td>";
-	$msg .="					<td>".$res['estato']."</td>";
-	$msg .="					<td>".$res['id_car']."</td>";
+	$msg .="				<tr scope='row'>";
+	$msg .="					<td calss='col'>".$res['descricao']."</td>";
+	$msg .="					<td calss='col'>".$res['marca']."</td>";
+	$msg .="					<td calss='col'>".$res['modelo']."</td>";
+	$msg .="					<td calss='col'>".$res['tipov']."</td>";
+	$msg .="					<td calss='col'>".$res['qntpass']."</td>";
+	$msg .="					<td calss='col'>".$res['vlvenda']."</td>";
+	$msg .="					<td calss='col'>".$res['vlcompra']."</td>";
+	$msg .="					<td calss='col'>".$res['datcompra']."</td>";
+	$msg .="					<td calss='col'>".$res['estato']."</td>";
+	$msg .="					<td calss='col'>".$res['id_car']."</td>";
 	$msg .="				</tr>";
 							}
 						}else{

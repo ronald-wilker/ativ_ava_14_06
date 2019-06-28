@@ -130,7 +130,7 @@
  <div id="erros">
 
     </div>
- <div class='container-flex row'>
+ <div class='container-flex'>
  		<fieldset id="cartext" >
 
  			<!-- Cabeçalho da Listagem -->
@@ -139,23 +139,23 @@
 
 
  				<!-- Tabela de Clientes -->
- 				<table class="d-block"  style="height:400px;overflow:scroll;">
+ 				<table class="d-flex table-sm  table-hover"  style="height:400px;overflow:scroll;background-color: rgba(211,211,211,0.5);">
           <tbody class="carro  " >
 
- 					<div class='row  d-flex justify-content-center align-items-center' style=" border:1px white solid;">
+ 					<div class=' d-flex justify-content-center align-items-center' style=" border:1px white solid;">
 
           <tr>
-            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Descrição</th>
-            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Marca</th>
-            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Modelo</th>
-            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Tipo de veículo</th>
-            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Qnt de passageiros</th>
-            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Valor de venda</th>
-            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Valor da compra</th>
-            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Data compra</th>
-            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;"> venda</th>
-            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Edita</th>
-            <th class="col-6 col-md-12" style=" border:1px white solid; color:Lime;">Excluir</th>
+            <th style=" border:1px white solid; color:black;">Descrição</th>
+            <th style=" border:1px white solid; color:black;">Marca</th>
+            <th style=" border:1px white solid; color:black;">Modelo</th>
+            <th style=" border:1px white solid; color:black;">Tipo de veículo</th>
+            <th style=" border:1px white solid; color:black;">Qnt de passageiros</th>
+            <th style=" border:1px white solid; color:black;">Valor de venda</th>
+            <th style=" border:1px white solid; color:black;">Valor da compra</th>
+            <th style=" border:1px white solid; color:black;">Data compra</th>
+            <th style=" border:1px white solid; color:black;"> venda</th>
+            <th style=" border:1px white solid; color:black;">Edita</th>
+            <th style=" border:1px white solid; color:black;">Excluir</th>
           </tr>
           <td class="descri">     </td>
           <td class="marca">      </td>
@@ -178,13 +178,15 @@
 
  		</fieldset>
  	</div>
+<div class="container-flex">
 
 <!--aqui recebera os valores da pesquisa e mostrara a figura carregamento se demera a pesquisa-->
   <div class="row container-flex" id="contentLoading">
 				<div id="loading"></div>
 			</div>
-			<section class="jumbotron">
+			<section>
 				<div id="MostraPesq"></div>
+      </div>
         <div class="">
 
             <!-- Botão para acionar modal

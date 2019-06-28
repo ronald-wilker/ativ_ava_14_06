@@ -80,53 +80,60 @@ $(document).ready(function () {//função para inserir no banco de dados
                           var dtc = resposta.busca[i]['8']
                           var st = resposta.busca[i]['9']
                   //criação da tabela para exebição do resultado
-                      $('.carro  td.descri').append(" <tr><td  class='col-3 col-md-6'><p class='  text-capitalize   id='des'  value='"+desc+"'>"+desc +'</p></td></tr>')
-                      $('.carro  td.marca').append(" <tr><td  class='col-3 col-md-6'><p class='  text-capitalize    id='mar'  value='"+mar+"'>"+mar +'</p></td></tr>')
-                      $('.carro  td.modelo').append(" <tr><td  class='col-3 col-md-6'><p class='  text-capitalize   id='mod'  value='"+mod+"'>"+mod +'</p></td></tr>')
-                      $('.carro  td.tipov').append(" <tr><td  class='col-3 col-md-6'><p class='  text-capitalize    id='tpv'  value='"+tpv+"'>"+tpv +'</p></td></tr>')
-                      $('.carro  td.quantp').append(" <tr><td  class='col-3 col-md-6'><p class='  text-capitalize   id='qnt'  value='"+qntp+"'>"+qntp +'</p></td></tr>')
-                      $('.carro  td.vlvenda').append(" <tr><td  class='col-3 col-md-6'><p class='  text-capitalize  id='vlv'  value='"+vlv+"'>"+vlv +'</p></td></tr>')
-                      $('.carro  td.vlcompra').append(" <tr><td  class='col-3 col-md-6'><p class='  text-capitalize id='vlc'  value='"+vlc+"'>"+vlc +'</p></td></tr>')
-                      $('.carro  td.dtcompra').append(" <tr><td  class='col-3 col-md-6'><p class='  text-capitalize id='dtc'  value='"+dtc+"'>"+dtc +'</p></td></tr>')
-                      $('.carro  td.estato').append(" <tr><td  class='col-3 col-md-6'><p class='  text-capitalize   id='st'  value='"+st+"'>"+st +'</p></td></tr>')
-                      $('.carro  td.id').append(" <tr><td  class='col-3 col-md-6'><button  class='r btn btn-sm btn-primary nav-link' id='idvalor' type='button' data-toggle='modal' data-target='#atualFormulario' value='"+id+"'>"+"Edit"+'</button></td></tr>')
-                      $('.carro  td.ider').append("<tr><td  class='col-3 col-md-6'><button class='del btn btn-sm btn-danger nav-link' type='button' name='idel' value='"+id+"'>"+"Del"+'</button></td></tr>')
+                      $('.carro  td.descri').append(" <tr><td  ><p class='  text-capitalize   id='des'  value='"+desc+"'>"+desc +'</p></td></tr>')
+                      $('.carro  td.marca').append(" <tr><td  ><p class='  text-capitalize    id='mar'  value='"+mar+"'>"+mar +'</p></td></tr>')
+                      $('.carro  td.modelo').append(" <tr><td  ><p class='  text-capitalize   id='mod'  value='"+mod+"'>"+mod +'</p></td></tr>')
+                      $('.carro  td.tipov').append(" <tr><td  ><p class='  text-capitalize    id='tpv'  value='"+tpv+"'>"+tpv +'</p></td></tr>')
+                      $('.carro  td.quantp').append(" <tr><td  ><p class='  text-capitalize   id='qnt'  value='"+qntp+"'>"+qntp +'</p></td></tr>')
+                      $('.carro  td.vlvenda').append(" <tr><td  ><p class='  text-capitalize  id='vlv'  value='"+vlv+"'>"+vlv +'</p></td></tr>')
+                      $('.carro  td.vlcompra').append(" <tr><td  ><p class='  text-capitalize id='vlc'  value='"+vlc+"'>"+vlc +'</p></td></tr>')
+                      $('.carro  td.dtcompra').append(" <tr><td  ><p class='  text-capitalize id='dtc'  value='"+dtc+"'>"+dtc +'</p></td></tr>')
+                      $('.carro  td.estato').append(" <tr><td  ><p class='  text-capitalize   id='st'  value='"+st+"'>"+st +'</p></td></tr>')
+                      $('.carro  td.id').append(" <tr><td  ><button  class='r btn btn-sm btn-primary nav-link' id='idvalor' type='button' data-toggle='modal' data-target='#atualFormulario' value='"+id+"'>"+"Edit"+'</button></td></tr>')
+                      $('.carro  td.ider').append("<tr><td  ><button class='del btn btn-sm btn-danger nav-link' type='button' name='idel' value='"+id+"'>"+"Del"+'</button></td></tr>')
 
 
                  }
 
 
-                  //inserir valor do id do edite no input do formulario de atualização
-                  //falta termina; nao ta inserirndo todos os campos ; pode apaga isso se quiser
-                 var des1 =$("#des").text()
-                 var mar1 =$("#mar").text()
-                 var mod1 =$("#mod").text()
-                 var tpv1 =$("#tpv").text()
-                 var qnt1 =$("#qnt").text()
-                 var vlv1 =$("#vlv").text()
-                 var vlc1 =$("#vlc").text()
-                 var dtc1 =$("#dtc").text()
-                 var sta1 =$("#st").text()
-                 console.log(des1);
-                 $('#descri1').   val(des1);
-                 $('#marca1').    val(mar1);
-                 $('#modelo1').   val(mod1);
-                 $('#tipov1').    val(tpv1);
-                 $('#quantp1').   val(qnt1);
-                 $('#vlvenda1').  val(vlv1);
-                 $('#vlcompra1'). val(vlc1);
-                 $('#dtcompra1'). val(dtc1);
-                 $('#estato1').   val(sta1);
-//pode apaga ate aqui ! o resto ta funcionando
+                  //função pra por valores da tabela  no input do formulario de atualização
+                  //aqui insere os o ID no formulario de atualização
+                  $('.r').click('button',function() {
+                    var idvl = $(this).val();
+                    $('#i1').        val(idvl);
+                  for (let i = 0; i < resposta.quant; i++) {
+                           var id = resposta.busca[i]['0']
+                           var desc = resposta.busca[i]['1']
+                           var mar = resposta.busca[i]['2']
+                           var mod = resposta.busca[i]['3']
+                           var tpv = resposta.busca[i]['4']
+                           var qnt = resposta.busca[i]['5']
+                           var vlv = resposta.busca[i]['6']
+                           var vlc = resposta.busca[i]['7']
+                           var dtc = resposta.busca[i]['8']
+                           var sta = resposta.busca[i]['9']
+  //aqui comparamos o valor que recuperamos o id da tabela e comparfamos com o id  da função busca
+                                              if (idvl==id) {
+                                                $('#descri1').   val(desc);
+                                                $('#marca1').    val(mar);
+                                                $('#modelo1').   val(mod);
+                                                $('#tipov1').    val(tpv);
+                                                $('#quantp1').   val(qnt);
+                                                $('#vlvenda1').  val(vlv);
+                                                $('#vlcompra1'). val(vlc);
+                                                $('#dtcompra1'). val(dtc);
+                                                $('#estato1').   val(sta);
+                                                console.log(idvl);
+
+                                              }
 
 
-//aqui insere os o ID no formulario de atualização
-                 $('.r').click('button',function() {
-                   var idvl = $(this).val();
-                   $('#i1').        val(idvl);
 
-                 })
-//aqui finda
+
+
+                         }
+                       })
+                       //aqui finda
 
                  //deleta via ajax
                  $('.del').click('button',function() {

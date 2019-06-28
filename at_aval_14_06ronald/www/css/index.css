@@ -4,6 +4,15 @@
 }
 
 body {
+/*
+    --scrollbar-face-color: #367CD2;
+    --scrollbar-shadow-color: #FFFFFF;
+    --scrollbar-highlight-color: #FFFFFF;
+    --scrollbar-3dlight-color: #FFFFFF;
+    --scrollbar-darkshadow-color: #FFFFFF;
+    --scrollbar-track-color: #FFFFFF;
+    --scrollbar-arrow-color: #FFFFFF;
+*/
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
@@ -97,5 +106,5 @@ h1 {
 }
 /*cor do texto do fieldset onde exibe o resultado do select*/
 #cartext{
-  color: yellow;
+  color:#0000CD	;
 }
